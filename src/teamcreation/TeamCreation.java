@@ -14,13 +14,13 @@ import java.util.*;
  * @author hrfre
  */
 public class TeamCreation {
-    // Main method
+    
    public static void main(String[] args) {
         List<Person> people = readData("Hugo.csv");
         List<Team> teams = createTeams(people, 20, 5);
         printTeams(teams);
     }
-   // Method to read data from the file and create a list of people
+   //Method to read data from the file and create a list of people
     public static List<Person> readData(String fileName) {
         List<Person> people = new ArrayList<>();
         try {
@@ -37,13 +37,13 @@ public class TeamCreation {
         }
         return people;
     }
-     // Method to create teams
+     //Method to create teams
     public static List<Team> createTeams(List<Person> people, int numTeams, int teamSize) {
         List<Team> teams = new ArrayList<>();
         Set<Integer> usedIds = new HashSet<>();
         Random random = new Random();
         
-        // Loop to create teams
+        //Loop to create teams
         for (int i = 0; i < numTeams; i++) {
             TeamNames teamName = TeamNames.values()[i];
             List<Person> teamMembers = new ArrayList<>();
@@ -58,7 +58,8 @@ public class TeamCreation {
         }
         return teams;
     }
-
+    
+    //This method prints the details of each team, including the team name and its members.
     public static void printTeams(List<Team> teams) {
         for (Team team : teams) {
             System.out.println("Team Name: " + team.getTeamName());
